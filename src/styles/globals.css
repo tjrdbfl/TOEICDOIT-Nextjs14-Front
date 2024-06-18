@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "mixins.css";
+@import "auth.css";
+@import "my-page.css";
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --blue1:#00A9FF;
+  --blue2:#5AB2FF;
+  --blue3:#00A9FF;
+  --blue4:#CAF4FF;
+  --blue5:#89CFF3;
+  --yellow1:#FFF9D0;
+  --yellow2:#F9F07A;
+  --red:#dc2626;
+  --gray:#e2e8f0;
+
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }  
+}
+
+
+.common_btn{
+  @apply shadow-lg border-gray-100 border-[1px];
+  background-color: var(--blue2);
+}
+.common_btn:hover{
+  @apply hover:transition-all hover:border-2 hover:duration-75; 
+  background-color: var(--blue1);
+}
+
+.user-icon{
+  color: var(--blue2);
+}
+.user-icon:hover{
+  color: var(--blue5);
+}
